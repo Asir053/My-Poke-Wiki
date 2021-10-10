@@ -1,12 +1,11 @@
 import { Switch, Route, NavLink, Redirect } from "react-router-dom";
 import Pokemon from "./containers/Pokemon";
 import PokemonList from "./containers/PokemonList";
-import "./App.css"
-
+import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className='App'>
       <nav>
         <NavLink to={"/"}>Search</NavLink>
       </nav>
