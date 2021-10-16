@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;700&display=swap");
+
 * {
   box-sizing: border-box;
+  font-family: "Noto Sans Mono", sans-serif;
 }
 
 p {
@@ -12,8 +15,8 @@ nav {
   width: 100%;
   height: 60px;
   align-items: center;
-  justify-content: flex-end;
-  background-color: coral;
+  justify-content: space-between;
+  background-color: rgb(132, 0, 255);
 }
 
 nav a {
@@ -32,7 +35,7 @@ nav a {
   display: flex;
   width: 100%;
   justify-content: space-between;
-  border: 2px solid coral;
+  border: 2px solid rgb(132, 0, 255);
   padding: 10px;
   border-radius: 7px;
 }
@@ -43,7 +46,7 @@ nav a {
 }
 
 .poke {
-  width: 90%;
+  width: 100%;
   margin: auto;
 }
 
@@ -53,23 +56,76 @@ nav a {
   justify-content: space-between;
 }
 
-.pokemon-wrapper .item {
+/* .pokemon-wrapper .item {
   width: 30%;
-}
+} */
 
 .search-wrapper {
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin: 20px 0;
+  padding: 20px 0;
+}
+.home:hover {
+  color: white;
+}
+
+.search-wrapper .btn {
+  background-color: rgb(132, 0, 255);
+  color: white;
 }
 
 .pagination {
-  width: 500px;
+  width: 400px;
   display: flex;
   margin: auto;
   list-style: none;
   justify-content: space-between;
-  padding: 0;
+  padding: 20px 0 25px 0;
+  font-weight: bold;
+  color: rgb(132, 0, 255);
+}
+
+.progress {
+  background-color: rgb(202, 145, 255);
+  border-radius: 20px;
+  position: relative;
+  margin: 10px 0;
+  height: 25px;
+  width: 200px;
+}
+
+.progress-done {
+  background: linear-gradient(to left, #f2709c, #ff9472);
+  box-shadow: 0 3px 3px -5px #f2709c, 0 2px 5px #f2709c;
+  border-radius: 20px;
+  color: #fff;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 0;
+  opacity: 0;
+  transition: 1s ease 0.3s;
+}
+
+.container-fluid {
+  position: relative;
+}
+
+.container-fluid::before {
+  content: "(" attr(href) ")";
+  background-image: url(./assets/pokepoke.jpg);
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 0.2;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }

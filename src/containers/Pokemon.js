@@ -2,6 +2,8 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getPokemon } from "../actions/pokemonActions";
 import _ from "lodash";
+import "../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+// import pokeimg from "../assets/pokepoke.jpg";
 
 export const Pokemon = (props) => {
   const pokemonName = props.match.params.pokemon;
@@ -16,27 +18,64 @@ export const Pokemon = (props) => {
       const pokeData = pokemonState.data[pokemonName];
       return (
         <div className='pokemon-wrapper'>
-          <div className='item'>
-            <h1>Sprites</h1>
-            <img src={pokeData.sprites.front_default} />
-            <img src={pokeData.sprites.back_default} />
-            <img src={pokeData.sprites.front_shiny} />
-            <img src={pokeData.sprites.back_default} />
+          <div className='item mt-3 col-4 d-none d-md-block d-lg-block '>
+            <img
+              style={{ width: "180px", height: "180px" }}
+              src={pokeData.sprites.front_default}
+              alt={""}
+            />
+            <img
+              style={{ width: "180px", height: "180px" }}
+              src={pokeData.sprites.back_default}
+              alt={""}
+            />
+            <img
+              style={{ width: "180px", height: "180px" }}
+              src={pokeData.sprites.front_shiny}
+              alt={""}
+            />
+            <img
+              style={{ width: "180px", height: "180px" }}
+              src={pokeData.sprites.back_shiny}
+              alt={""}
+            />
           </div>
-          <div className='item'>
+          <div className='item mt-5 pt-4 pl-3 ml-5 col-4 '>
+            <h1>Type(s)</h1>
+            <ul style={{ fontWeight: "bold" }}>
+              {pokeData.types.map((el) => {
+                return <li>{el.type.name}</li>;
+              })}
+            </ul>
+            <div className='mt-5'>
+              <h1>Abilities</h1>
+              <ul style={{ fontWeight: "bold" }}>
+                {pokeData.abilities.map((el) => {
+                  return <li>{el.ability.name}</li>;
+                })}
+              </ul>
+            </div>
+          </div>
+
+          <div className='item mt-3 col-4 mr-5 pb-5'>
             <h1>Stats</h1>
             {pokeData.stats.map((el) => {
               return (
-                <p>
-                  {el.stat.name} {el.base_stat}
-                </p>
+                <div>
+                  <div style={{ fontWeight: "bold" }}>{el.stat.name}</div>
+                  <div className='progress'>
+                    <div
+                      className='progress-done'
+                      style={{
+                        opacity: 1,
+                        width: `${el.base_stat}%`,
+                      }}
+                    >
+                      {el.base_stat}%
+                    </div>
+                  </div>
+                </div>
               );
-            })}
-          </div>
-          <div className='item'>
-            <h1>Abilities</h1>
-            {pokeData.abilities.map((el) => {
-              return <p>{el.ability.name}</p>;
             })}
           </div>
         </div>
@@ -51,9 +90,11 @@ export const Pokemon = (props) => {
     return <p>error getting pokemon</p>;
   };
   return (
-    <div className='poke'>
-      <h1>{pokemonName}</h1>
-      {showData()}
+    <div className='container'>
+      <div className='poke'>
+        <h1 className='text-center pt-2'>{pokemonName.toUpperCase()}</h1>
+        {showData()}
+      </div>
     </div>
   );
 };
