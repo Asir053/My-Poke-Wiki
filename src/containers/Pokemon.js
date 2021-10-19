@@ -40,7 +40,14 @@ export const Pokemon = (props) => {
               alt={""}
             />
           </div>
-          <div className='item mt-5 pt-4 ml-4 col-4 '>
+          <div className='item mt-5 pt-4 ml-1 col-4 '>
+            <div className=' d-block d-md-none d-lg-none '>
+              <img
+                style={{ width: "120px", height: "120px" }}
+                src={pokeData.sprites.front_default}
+                alt={""}
+              />
+            </div>
             <h1>Type(s)</h1>
             <ul style={{ fontWeight: "bold" }}>
               {pokeData.types.map((el) => {
