@@ -40,7 +40,7 @@ export const Pokemon = (props) => {
               alt={""}
             />
           </div>
-          <div className='item mt-5 pt-4 ml-1 col-4 '>
+          <div className='item mt-5 pt-4 ml-md-1 ml-lg-5 pl-lg-5 col-4'>
             <div className=' d-block d-md-none d-lg-none '>
               <img
                 style={{ width: "120px", height: "120px" }}
@@ -64,7 +64,7 @@ export const Pokemon = (props) => {
             </div>
           </div>
 
-          <div className='item mt-3 col-4 mr-5 pb-5'>
+          <div className='item mt-3 col-4 mr-2 pb-5 '>
             <h1>Stats</h1>
             {pokeData.stats.map((el) => {
               return (

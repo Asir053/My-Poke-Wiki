@@ -62,7 +62,7 @@ nav a {
 
 .search-wrapper {
   display: flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
   align-items: center;
   padding: 20px 0;
@@ -77,7 +77,7 @@ nav a {
 }
 
 .pagination {
-  width: 400px;
+  width: 300px;
   display: flex;
   margin: auto;
   list-style: none;
@@ -93,7 +93,8 @@ nav a {
   position: relative;
   margin: 10px 0;
   height: 25px;
-  width: 200px;
+  /* width: 200px; */
+  width: 110%;
 }
 
 .progress-done {

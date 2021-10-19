@@ -70,8 +70,8 @@ export const PokemonList = (props) => {
           />
         </div>
         <button
-          type='button'
-          className='btn '
+          type='button '
+          className='btn'
           onClick={() => props.history.push(`/pokemon/${search.toLowerCase()}`)}
         >
           <FontAwesomeIcon icon={faSearch} />
